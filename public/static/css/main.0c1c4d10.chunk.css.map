@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css","webpack://src/Components/board.css"],"names":[],"mappings":"AAAA,UACE,UAAW,CACX,WACF,CCHA,eACI,YACJ","file":"main.0c1c4d10.chunk.css","sourcesContent":["html, body {\r\n  width: 100%;\r\n  height: 100%\r\n}",".gridContainer {\r\n    display: grid\r\n}\r\n\r\n.gridCell {\r\n    \r\n}"]}

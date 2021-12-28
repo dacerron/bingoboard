@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css","webpack://src/Components/board.css"],"names":[],"mappings":"AAAA,KACI,YACJ,CCFA,eACI,YACJ","file":"main.e5478fb0.chunk.css","sourcesContent":[".App {\r\n    display: flex\r\n}",".gridContainer {\r\n    display: grid\r\n}\r\n\r\n.gridCell {\r\n    \r\n}"]}

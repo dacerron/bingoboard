@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import logo from './logo.svg';
 import './App.css';
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
+
+
 
 import BoardDisplay from './Components/BoardDisplay.jsx'
 
@@ -9,44 +13,45 @@ function App() {
   const [activityName, setActivityName] = useState("")
   const [renderedActivities, setRenderedActivities] = useState([])
 
-  const addActivityHandler = function() {
+  const addActivityHandler = function () {
 
-    fetch("http://192.168.0.17:8080/newActivity/"+activityName,{
+    fetch("http://192.168.0.17:8080/newActivity/" + activityName, {
       method: "GET",
     })
-    .then((response) => {
-      console.log(response)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
-  const updateActivityName = function(e) {
+  const updateActivityName = function (e) {
     setActivityName(e.target.value)
   }
 
-  const fetchActivities = function(e) {
+  const fetchActivities = function (e) {
     fetch("http://192.168.0.17:8080/generateBoard", {
       mode: 'cors'
     })
-    .then((response) => {
-      console.log(response)
-      return response.json()
-    })
-    .then((data) => {
-      console.log(data)
-      setRenderedActivities(data)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+      .then((response) => {
+        console.log(response)
+        return response.json()
+      })
+      .then((data) => {
+        console.log(data)
+        setRenderedActivities(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   return (
     <div className="App">
-      <input types="text" onChange={(e) => { updateActivityName(e)}} placeholder={"describe activity here"}></input><button type="button" onClick={() => { addActivityHandler()}}>save</button>
-      <button type="button" onClick={() => {fetchActivities()}}>generateBoard</button>
+      <TextField id="outlined-basic" label="Activity" variant="outlined" onChange={(e) => { updateActivityName(e) }} placeholder={"describe activity here"} />
+      <Button variant="contained" onClick={() => { addActivityHandler() }}>save</Button>
+      <Button variant="contained" onClick={() => { fetchActivities() }}>generateBoard</Button>
       <BoardDisplay activities={renderedActivities}></BoardDisplay>
     </div>
   );
