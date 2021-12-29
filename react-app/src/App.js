@@ -15,7 +15,7 @@ function App() {
 
   const addActivityHandler = function () {
 
-    fetch("http://192.168.0.17:8080/newActivity/" + activityName, {
+    fetch("http://127.0.0.1:8080/newActivity/" + activityName, {
       method: "GET",
     })
       .then((response) => {
@@ -31,7 +31,7 @@ function App() {
   }
 
   const fetchActivities = function (e) {
-    fetch("http://192.168.0.17:8080/generateBoard", {
+    fetch("http://127.0.0.1:8080/generateBoard", {
       mode: 'cors'
     })
       .then((response) => {

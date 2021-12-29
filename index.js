@@ -4,7 +4,7 @@ const path = require("path")
 
 const app = express();
 const port = 8080
-const addr_public = "192.168.0.17"
+const addr_public = "10.74.234.229"
 const addr_local = "127.0.0.1";
 
 const activities = []
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 })
 
 
-const addr = addr_public;
+const addr = addr_local;
 app.listen(port, () => {
     console.log("app listening on ", addr, ":", port)
 })
