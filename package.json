@@ -9,11 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
-    "@mui/material": "^5.2.5",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "react-contenteditable": "^3.3.6"
+    "express": "^4.17.1"
   }
 }

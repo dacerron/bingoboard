@@ -8,6 +8,8 @@ import Button from '@mui/material/Button'
 
 import BoardDisplay from './Components/BoardDisplay.jsx'
 
+let activities = []
+
 function App() {
 
   const [activityName, setActivityName] = useState("")
@@ -32,7 +34,6 @@ function App() {
 
   const fetchActivities = function (e) {
     fetch("http://127.0.0.1:8080/generateBoard", {
-      mode: 'cors'
     })
       .then((response) => {
         console.log(response)
@@ -40,7 +41,12 @@ function App() {
       })
       .then((data) => {
         console.log(data)
-        setRenderedActivities(data)
+        activities = []
+        for(let i = 0; i++; i < data.length) {
+          activities.push(data)
+        }
+        console.log(activities)
+        setRenderedActivities(activities)
       })
       .catch((err) => {
         console.log(err)
@@ -56,5 +62,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

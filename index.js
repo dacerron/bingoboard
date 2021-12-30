@@ -1,6 +1,6 @@
 const express = require("express")
 const path = require("path")
-//const cors = require("cors")
+const cors = require("cors")
 
 const app = express();
 const port = 8080
@@ -9,7 +9,7 @@ const addr_local = "127.0.0.1";
 
 const activities = []
 
-//app.use(cors());
+app.use(cors());
 // return string on adding to array
 app.get("/newActivity/:desc", (req, res) => {
     activities.push(req.params.desc)
