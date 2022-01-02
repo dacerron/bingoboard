@@ -43,7 +43,6 @@ const changeRequest = function (id, el) {
 
 
 function BoardDisplay({ activities }) {
-
     const [boardValues, setBoardValues] = useState([])
     const [loadedBoardValues, setLoadedBoardValues] = useState(false)
     const handleBoardUpdate = (id, el) => {
