@@ -88,6 +88,17 @@ app.get("/generateBoard", (req, res) => {
 
   }
 });
+
+app.get("/listActivities, (req, res) => {
+
+  //check for 16 and returns docs
+  Activity.countDocuments({}, function (err, count) {
+  console.log('activities:', count);
+    Activity.find({}).lean().exec(function (err, docs) {
+      res.send(docs);
+      console.log("generating board")
+  });
+});
   //return 16 in array
   //  console.log("generating board")
     //res.send(activities)
